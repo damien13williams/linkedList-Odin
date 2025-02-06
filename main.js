@@ -1,3 +1,12 @@
+// Node Class
+class node{
+    constructor(value){
+        this.value = value;
+        this.next = null;
+    }
+
+}
+
 // Linked List Class
 class linkedList {
     constructor() {
@@ -139,18 +148,44 @@ class linkedList {
     }
 
     // Convert LinkedList objects to strings to print
-    toString(list){
-        
+    toString(){
+        if (!this.head){
+            return 'null';
+        }
+        let current = this.head;
+        let result = '';
+        while (current){
+            result += `( ${current.value} ) -> `;
+            current = current.next;
+        } 
+        result += 'null';
+        return result;
     }
 }
 
-// Node Class
-class node{
-    constructor(value){
-        this.value = null;
-        this.next = null;
-    }
+// TESTS:
 
-}
+const list = new linkedList();
+
+//append
+list.append(3);
+console.log(list.toString());
+//prepend
+//getHead
+
+//getTail
+
+//size
+
+//pop
+
+//at
+
+//contains
+
+//find
+
+//toString
+
 
 
