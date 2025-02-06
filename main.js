@@ -168,24 +168,31 @@ class linkedList {
 const list = new linkedList();
 
 //append
-list.append(3);
-console.log(list.toString());
+list.append("dog");
+list.append("cat");
+list.append("parrot");
+list.append("hamster");
+list.append("snake");
+
 //prepend
+list.prepend("turtle");
+
 //getHead
-
+console.log(list.getHead());
 //getTail
-
+console.log(list.getTail());
 //size
-
+console.log(list.size());
 //pop
-
+console.log(list.pop());
+console.log(list.toString());
 //at
-
+console.log(list.at(2));
 //contains
-
+console.log(list.contains("doggie"));
 //find
-
+console.log(list.find("dog"));
 //toString
-
+console.log(list.toString());
 
 
