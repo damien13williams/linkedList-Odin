@@ -19,9 +19,10 @@ This project is part of the [Odin Project](https://www.theodinproject.com/) Java
 - ✅ **prepend(value)**: Add a new node at the beginning  
 - ✅ **append(value)**: Add a new node at the end  
 - ✅ **find(value)**: Return the index of the node containing the value  
+- ✅ **toString()**: Return a string representation of the linked list 
 
 ### **To-Do**
-- ⬜ **toString()**: Return a string representation of the linked list  
+- ⬜ **Extras**: Additional Task on Odin Project 
 
 ---
 
