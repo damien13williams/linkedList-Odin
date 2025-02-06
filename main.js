@@ -2,6 +2,7 @@
 class linkedList {
     constructor() {
         this.head = null;
+        this.tail = null;
     }
 
     // Append
@@ -34,38 +35,107 @@ class linkedList {
     }
 
     // Size
-   size(list){
-
+    size(){
+        let count = 0;
+        let current = this.head;
+        while (current){ // traverse through the list until null
+            count++;
+            current = current.next
+        }
+        return count;
     }
 
     // Head
-    head(list){
-
+    getHead(){
+        return this.head;
     }
 
     // Tail
-    tail(list){
-
+    getTail(){
+        let current = this.head;
+        while (current.next){
+            current = current.next;
+        }
+        return current;
     }
 
     // Node at index given
     at(index){
+        // base case
+        if (index < 0){
+            return null;
+        }
 
+        let current = this.head;
+        let count = 0;
+        while(current){
+            if (count === index){
+                return current;
+            }
+            current = current.next;
+            count++;
+        }
+        return null;
     }
 
     // Pop
-    pop(list){
-
+    pop(){
+        // Base Cases
+        if (!this.head) {
+            return null; // List is empty
+        } 
+          
+        if (!this.head.next) {
+            const node = this.head;
+            this.head = null;
+            return node;
+        } 
+        
+        let current = this.head;
+        while(current.next.next){
+            current = current.next;
+        }
+        const tailNode = current.next;
+        current.next = null; 
+        return tailNode;
     }
 
     // Return T/F if value appears
     contains(value){
+        // Base Case
+        if (!this.head){
+            return null;
+        }
 
+        let current = this.head;
+        while(current){
+            if(value === current.value){
+                return true
+            }
+            current = current.next;
+        } 
+        return false;
     }
 
     // return index of node containing a value
     find(value){
 
+        // Base Case: No nodes
+        if(!this.head){
+            return -1; 
+        }
+
+        let index = 0;
+        let current = this.head;
+        while(current){
+            if(value === current.value){
+                return index;
+            }
+            index++;
+            current = current.next
+        }
+
+        return -1;
     }
 
     // Convert LinkedList objects to strings to print
